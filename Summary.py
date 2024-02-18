@@ -1,19 +1,21 @@
-from tkinter import Tk, Text, Label
+from tkinter import *
 import tkinter as tk
 from ttkbootstrap import *
 
 import Presentation
+root = Tk()
 
 
-def main_window():
+root.geometry("800x600")
+root.title("History of the United States Constitution")
+root.configure(background="#152e7a")
+
+
+def main_window() -> object:
     # Create the main window
-    root = tk.Tk()
-    root.geometry("800x600")
-    root.title("History of the United States Constitution")
-    root.configure(bg="#152e7a")
 
     # Create a label
-    main_label = Label(root, text="The Constitution", font=("Arial", 20), bg = "#152e7a")
+    main_label = Label(root, text="The Constitution", font=("Arial", 20), background = "#152e7a")
     main_label.pack(pady=10)
     textbox = Text(root, wrap="word", font=("Arial", 12), bg="#152e7a")
     textbox.pack(fill="both", expand=True, padx=10, pady=10)
@@ -45,7 +47,7 @@ def main_window():
 
     textbox.insert("1.0", constitution_text)
 
-main_window()
+#main_window()
 #Presentation.GetPresidents()
 
-ttk.root.mainloop()
+root.mainloop()
